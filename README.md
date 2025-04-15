@@ -15,6 +15,17 @@ Hacer un archivo .env en raiz del proyecto.
 ├── package-lock.json
 ├── README.md
 ```
+
+```.env
+    PORT=3333     
+    HOST='localhost'                                                        
+    API_URL=/api/v1                                                                        
+    CONNECTION_STRING=mongodb+srv://*usuario*:*password*@security.d2iho.mongodb.net/
+    DB_USER='*usuario*'                                                                 
+    DB_PASSWORD='*password*'                                                              
+    DATABASE='*Database Cluster*'
+```
+
 Como tambien utilizar actualizar las dependencias para
 
 ```
