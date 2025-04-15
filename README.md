@@ -17,13 +17,13 @@ Hacer un archivo .env en raiz del proyecto.
 ```
 
 ```.env
-    PORT=3333     
-    HOST='localhost'                                                        
-    API_URL=/api/v1                                                                        
-    CONNECTION_STRING=mongodb+srv://*usuario*:*password*@security.d2iho.mongodb.net/
-    DB_USER='*usuario*'                                                                 
-    DB_PASSWORD='*password*'                                                              
-    DATABASE='*Database Cluster*'
+PORT=3333     
+HOST='localhost'                                                        
+API_URL=/api/v1                                                                        
+CONNECTION_STRING=mongodb+srv://*usuario*:*password*@security.d2iho.mongodb.net/
+DB_USER='*usuario*'                                                                 
+DB_PASSWORD='*password*'                                                              
+DATABASE='*Database Cluster*'
 ```
 
 Como tambien utilizar actualizar las dependencias para
@@ -105,12 +105,106 @@ Body de ejemplo:
     }
 }
 ```
+
 ### 5. Eliminar usuario (lógico)
 ```
-POST/api/security/deleteusers?USERID=*usuario*
+POST /api/security/deleteusers?USERID=*usuario*
 ```
 
-### 6. Eliminar usuario (fisico)
+### 6. Eliminar usuario (físico)
 ```
 POST /api/security/physicalDeleteUser?userid=*usuario*
+```
+
+## 🔐 Roles
+
+### 1. Obtener todos los roles
+```
+GET /api/rol/getall
+```
+
+### 2. Obtener un rol por ID
+```
+GET /api/rol/getitem
+```
+
+**Body:**
+```json
+{
+  "ID": "recepcion01"
+}
+```
+
+### 3. Crear un rol
+```
+POST /api/rol/addOne
+```
+
+**Body:**
+```json
+{
+  "roles": {
+    "ROLEID": "recepcion02",
+    "ROLENAME": "Jefe de ventas",
+    "DESCRIPTION": "Encargado de Almacen de existencias",
+    "DETAIL_ROW": {
+      "ACTIVED": true,
+      "DELETED": false
+    },
+    "PRIVILEGES": [
+      {
+        "PROCESSID": "IdProcess-IdTheoreticalQuantity",
+        "PRIVILEGEID": "IdRead"
+      },
+      {
+        "PROCESSID": "IdProcess-IdRecount",
+        "PRIVILEGEID": "IdUpdate"
+      },
+      {
+        "PROCESSID": "IdProcess-IdRecount",
+        "PRIVILEGEID": "IdRead"
+      }
+    ]
+  }
+}
+```
+
+### 4. Actualizar un rol
+
+```
+POST /api/rol/updateItem
+```
+
+**Body:**
+```json
+{
+  "roles": {
+    "ROLEID": "recepcion01",
+    "ROLENAME": "recepcionista",
+    "DESCRIPTION": "Encargado general de recepcionistas",
+    "DETAIL_ROW": {
+      "ACTIVED": true,
+      "DELETED": false
+    },
+    "PRIVILEGES": [
+      {
+        "PROCESSID": "IdProcess-IdTheoreticalQuantity",
+        "PRIVILEGEID": "IdRead"
+      },
+      {
+        "PROCESSID": "IdProcess-IdRecount",
+        "PRIVILEGEID": "IdUpdate"
+      },
+      {
+        "PROCESSID": "IdProcess-IdRecount",
+        "PRIVILEGEID": "IdRead"
+      }
+    ]
+  }
+}
+```
+
+### 5. Eliminar rol (lógico)
+```
+POST /api/rol/deleteItem
 ```
