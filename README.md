@@ -1,25 +1,105 @@
-# Getting Started
+# SAP-CDS-Projecto
 
-Welcome to your new project.
+El siguiente projecto es un trabajo complementario de la materia de Desarrollo de Aplicaciones Multiplataforma.
 
-It contains these folders and files, following our recommended project layout:
+## Agregar el .env para conectar la base de datos.
+Hacer un archivo .env en raiz del proyecto.
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+```
+/
+├── src/               
+│   ├── config/        
+├── .env               # Archivo de variables de entorno
+├── server.js          
+├── package.json
+├── package-lock.json
+├── README.md
+```
+Como tambien utilizar actualizar las dependencias para
 
+```
+npm i
+```
 
-## Next Steps
+## Usuarios
 
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+### 1. Obtener todos los usuarios
 
+```
+GET /api/security/getAllUsers
+```
 
-## Learn More
+### 2. Obtener un usuario en concreto
+```
+GET /api/security/getUserById?userid=*usuario*
+```
 
-Learn more at https://cap.cloud.sap/docs/get-started/.
+### 3. Crear un usuario
+```
+POST /api/security/createUser
+```
+
+Body de ejemplo:
+```json
+{
+    "user": {
+        "USERID": "MARIPOSA22",
+        "PASSWORD": "Butterfly$2024",
+        "USERNAME": "MARIA ISABEL PEREZ OSORIO",
+        "ALIAS": "Mari",
+        "FIRSTNAME": "MARIA ISABEL",
+        "LASTNAME": "PEREZ OSORIO",
+        "BIRTHDAYDATE": "22.04.1995",
+        "AVATAR": "https://example.com/avatars/maria.jpg",
+        "COMPANYID": 1002,
+        "COMPANYNAME": "TECNOLOGICO NACIONAL DE MEXICO",
+        "COMPANYALIAS": "TECNM",
+        "CEDIID": "CDMX001",
+        "EMPLOYEEID": "TNM2024",
+        "EMAIL": "mperez@tecnm.mx",
+        "PHONENUMBER": "5512345678",
+        "EXTENSION": "123",
+        "DEPARTMENT": "Recursos Humanos",
+        "FUNCTION": "Jefa de Capacitación",
+        "STREET": "Av. Universidad 1234",
+        "POSTALCODE": 3100,
+        "CITY": "Ciudad de México",
+        "REGION": "Centro",
+        "STATE": "Ciudad de México",
+        "COUNTRY": "México",
+        "ROLES": [
+            {
+                "ROLEID": "IdAdministrador"
+            },
+            {
+                "ROLEID": "IdRHManager",
+                "ROLEIDSAP": "RH-001"
+            }
+        ]
+    }
+}
+```
+
+### 4. Actualizar datos de un usuario
+```
+POST /api/security/updateone?USERID=*usuario*
+```
+
+Body de ejemplo:
+```json
+{
+    "user": {
+        "EMAIL": "nue3434o@email.com",
+        "DEPARTMENT": "Nuevo Departamento"
+    }
+}
+```
+### 5. Eliminar usuario (lógico)
+```
+POST/api/security/deleteusers?USERID=*usuario*
+```
+
+### 6. Eliminar usuario (fisico)
+```
+POST /api/security/physicalDeleteUser?userid=*usuario*
+```
