@@ -2,7 +2,7 @@ using { sec as mysec } from '../models/security/sec-values.cds';
 
 @impl: 'src/api/controllers/sec-processes-controller.js'
 
-service ProcessesRoute @(path:'/api/security') {
+service ProcessesRoute @(path:'/api/security/process') {
 
     entity processes as projection on mysec.Values;
 

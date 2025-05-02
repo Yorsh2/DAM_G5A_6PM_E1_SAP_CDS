@@ -37,17 +37,17 @@ npm i
 ### 1. Obtener todos los usuarios
 
 ```
-GET /api/security/getAllUsers
+GET /api/security/users/getAllUsers
 ```
 
 ### 2. Obtener un usuario en concreto
 ```
-GET /api/security/getUserById?userid=*usuario*
+GET /api/security/users/getUserById?userid=*usuario*
 ```
 
 ### 3. Crear un usuario
 ```
-POST /api/security/createUser
+POST /api/security/users/createUser
 ```
 
 Body de ejemplo:
@@ -108,24 +108,24 @@ Body de ejemplo:
 
 ### 5. Eliminar usuario (lógico)
 ```
-POST /api/security/deleteusers?USERID=*usuario*
+POST /api/security/users/deleteusers?USERID=*usuario*
 ```
 
 ### 6. Eliminar usuario (físico)
 ```
-POST /api/security/physicalDeleteUser?userid=*usuario*
+POST /api/security/users/physicalDeleteUser?userid=*usuario*
 ```
 
 ## 🔐 Roles
 
 ### 1. Obtener todos los roles
 ```
-GET /api/rol/getall
+GET /api/security/rol/getall
 ```
 
 ### 2. Obtener un rol por ID
 ```
-GET /api/rol/getitem
+GET /api/security/rol/getitem
 ```
 
 **Body:**
@@ -137,7 +137,7 @@ GET /api/rol/getitem
 
 ### 3. Crear un rol
 ```
-POST /api/rol/addOne
+POST /api/security/rol/addOne
 ```
 
 **Body:**
@@ -172,7 +172,7 @@ POST /api/rol/addOne
 ### 4. Actualizar un rol
 
 ```
-POST /api/rol/updateItem
+POST /api/security/rol/updateItem
 ```
 
 **Body:**
@@ -206,5 +206,5 @@ POST /api/rol/updateItem
 
 ### 5. Eliminar rol (lógico)
 ```
-POST /api/rol/deleteItem
+POST /api/security/rol/deleteItem
 ```

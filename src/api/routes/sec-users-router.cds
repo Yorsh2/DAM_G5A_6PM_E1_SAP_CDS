@@ -2,11 +2,10 @@ using { sec as mysec } from '../models/security/sec-users.cds';
 
 @impl: 'src/api/controllers/sec-users-controller.js'
 
-service SecurityRoute @(path:'/api/security') {
+service SecurityRoute @(path:'/api/security/users') {
     
     entity users as projection on mysec.Users;
 
-    
     @Core.Description: 'Obtener todos los usuarios'
     @path: 'users'
     function getAllUsers()

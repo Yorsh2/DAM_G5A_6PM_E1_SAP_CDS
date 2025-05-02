@@ -1,7 +1,7 @@
 using { sec as mycatalogs } from '../models/security/sec-labels.cds';
 
 @impl: 'src/api/controllers/sec-catalog-controller.js'
-service SecurityRoute @(path:'/api/security') {
+service CatalogRoute @(path:'/api/security/catalog') {
 
   entity catalogs as projection on mycatalogs.Labels;
 

@@ -7,6 +7,7 @@
   "private": true,
   "dependencies": {
     "@dotenvx/dotenvx": "^1.40.0",
+    "@hapi/boom": "^10.0.1",
     "@sap/cds": "^8",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",

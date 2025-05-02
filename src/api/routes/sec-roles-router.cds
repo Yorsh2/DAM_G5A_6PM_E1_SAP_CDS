@@ -1,7 +1,7 @@
 using { sec as myrol } from '../models/security/sec-roles';
 
 @impl: 'src/api/controllers/sec-roles-controller.js'
-service RolesRouter @(path : '/api/rol') {
+service RolesRouter @(path : '/api/security/rol') {
   @readonly: false
   entity roles as projection on myrol.Roles;
 

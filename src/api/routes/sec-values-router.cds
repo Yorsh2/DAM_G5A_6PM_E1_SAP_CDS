@@ -5,7 +5,7 @@ using { sec as mysec } from '../models/security/sec-values.cds';
 @impl: 'src/api/controllers/sec-values-controller.js'
 
 
-service SecurityRoute @(path:'/api/security') {
+service ValuesRoute @(path:'/api/security/values') {
 
     entity values as projection on mysec.Values;
     // entity users as projection on mysecuseres.Users;
