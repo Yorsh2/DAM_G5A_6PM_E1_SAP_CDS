@@ -135,7 +135,7 @@ async function UpdateOneUser(req) {
             { 
                 $set: {
                     ...safeUpdates,
-                    'DETAIL_ROW.DETAIL_ROW_REG': [
+                    DETAIL_ROW_REG: [
                         ...existingUser.DETAIL_ROW.DETAIL_ROW_REG.filter(reg => !reg.CURRENT),
                         auditEntry
                     ]

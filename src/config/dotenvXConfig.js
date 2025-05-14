@@ -1,6 +1,7 @@
 const dotenvx = require('@dotenvx/dotenvx');
 dotenvx.config();
 
+
 module.exports = {
     HOST: 'localhost' || 'NO ENCONTRE VARIABE DE ENTORNO',
     PORT: 3333 || 'NO ENCONTRE PORT',
@@ -10,3 +11,4 @@ module.exports = {
     DB_USER: 'rofriasbo'  || 'admin',  
     DB_PASSWORD: 'XNpz003xPlfyRJMI'   || 'admin', 
 }
+
